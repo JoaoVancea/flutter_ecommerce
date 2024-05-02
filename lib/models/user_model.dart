@@ -15,7 +15,7 @@ class UserModel {
 
   // Adiciona um produto à lista de favoritos do usuário
   void addFavorite(ProductModel product) {
-    if(!favorites.contains(product)) {
+    if (!favorites.contains(product)) {
       favorites.add(product);
     }
   }
@@ -23,7 +23,7 @@ class UserModel {
   // Remove um produto da lista de produtos do usuário
   void removeProduct(ProductModel product) {
     int index = products.indexOf(product);
-    if(index != -1) {
+    if (index != -1) {
       products.removeAt(index);
     }
   }
@@ -31,7 +31,7 @@ class UserModel {
   // Remove um produto da lista de favoritos do usuário
   void removeFavorite(ProductModel product) {
     int index = favorites.indexOf(product);
-    if(index != -1) {
+    if (index != -1) {
       favorites.removeAt(index);
     }
   }

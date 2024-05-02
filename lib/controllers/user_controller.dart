@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/models/product_model.dart';
 import 'package:flutter_ecommerce/models/user_model.dart';
 
-class UserController with ChangeNotifier{
+class UserController with ChangeNotifier {
   List<UserModel> users = [
     UserModel(username: 'Kaian', email: 'kaian@senai.com.br')
   ];
@@ -10,7 +10,7 @@ class UserController with ChangeNotifier{
   // Método para adicionar um produto ao carrinho de um usuário
   void addToCart(String userEmail, ProductModel product) {
     UserModel? user = users.firstWhere((u) => u.email == userEmail);
-    if(user.email.isNotEmpty) {
+    if (user.email.isNotEmpty) {
       user.addProduct(product);
     }
   }
@@ -41,5 +41,9 @@ class UserController with ChangeNotifier{
       print('Email não bate');
     }
     notifyListeners();
+  }
+
+  Future<List<ProductModel>> favoriteProductsUser(index) async {
+    return users[index].favorites;
   }
 }
